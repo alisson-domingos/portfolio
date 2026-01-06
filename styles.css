@@ -5,6 +5,192 @@
     font-family: 'segoe ui', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+
+
+/* ========= INICIO DO REFATURAMENTO DO CODIGO ================ */
+
+/* PADRÃO WORD - ESTILOS GLOBAIS */
+.titulo-1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primaria);
+}
+
+.ti {
+    display: block;
+    /* Garante que ele se comporte como uma linha inteira */
+    width: 100%;
+    /* Ocupa de um lado ao outro da tela */
+    text-align: center;
+    /* Agora o centro vai funcionar de verdade */
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--escuro);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    clear: both;
+    /* Evita que elementos flutuando (oat) fiquem do lado dele */
+}
+
+.p-txt {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+
+/* --- NOVO CARD BASE (Refatorado para Fotos) --- */
+.card-base {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    /* Fundo padrão é BRANCO */
+    color: #1b1b1f;
+    /* Texto padrão é ESCURO */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* O degradê agora é exclusivo para cards que têm a classe .card-foto ou .card-com-bg */
+.card-foto::before,
+.card-com-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente: transparente no topo, preto no fundo */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 60%);
+    z-index: 1;
+}
+
+/* Garante que o texto fique na frente da sombra */
+.card-base h3,
+.card-base p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* --- HOVER ÚNICO (Limpando as duplicatas) --- */
+.card-base:hover {
+    transform: translateY(-8px);
+    /* Flutua um pouco mais alto */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    border-color: #25d366;
+    /* Opcional: borda brilha com o verde WhatsApp no hover */
+}
+
+/* --- ESTILO PARA CARDS QUE TÊM FOTO (Pessoal) --- */
+.card-foto {
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+    /* EFEITO CINZA: Todos começam cinza */
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+    /* Transição suave para a cor voltar */
+}
+
+.card-foto:hover {
+    filter: grayscale(0%);
+    /* A cor volta quando passa o mouse */
+    transform: scale(1.02);
+    /* Leve aumento para destacar */
+}
+
+/* Ajuste para o texto dentro do card com foto */
+.card-foto .t-s,
+.card-foto .p-txt {
+    color: white;
+    /* Texto sempre branco nos cards com foto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    /* Sombra forte para ler sobre a foto */
+    z-index: 2;
+}
+
+
+/* Card com imagem de fundo */
+.card-com-bg {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    /* Texto branco para dar leitura sobre a foto */
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Joga o texto para o rodapé do card */
+}
+
+/* Camada escura para o texto não sumir na foto */
+.card-com-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Sombra preta transparente */
+    z-index: 1;
+}
+
+/* Garante que o texto fique acima da sombra */
+.card-com-bg h3,
+.card-com-bg p {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* A MÁGICA DO LADO A LADO */
+.grid-geral {
+    display: grid;
+    /* Ativa o modo grade */
+
+    /* Esta linha abaixo é o segredo do Responsivo:
+        Ela diz: 'Crie quantas colunas couberem, desde que cada uma tenha no mínimo 280px'.
+        Se a tela for pequena (celular), ele coloca 1 por linha. 
+       Se for grande (PC), ele coloca 3 ou 4. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+    /* Espaçamento entre os cards */
+    width: 100%;
+    max-width: 1200px;
+    /* Largura máxima para não espalhar demais em monitores 4K */
+    margin: 2rem auto;
+    /* Centraliza a grid na página */
+    padding: 0 1rem;
+    /* Respiro nas laterais para não encostar na borda da tela */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========= FIM DO REFATURAMENTO DO CODIGO ================ */
 /*  Mudar essa font */
 
 html {
@@ -101,6 +287,8 @@ h1 {
 .cabecalho-sub-titulo {
     font-size: 1.5rem;
     color: --escuro;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -343,6 +531,8 @@ h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #1b1b1f;
+    text-align: center;
+    /* Adicione esta linha */
 }
 
 .contato-texto {
@@ -353,7 +543,13 @@ h1 {
 }
 
 .botao-whats {
-    display: inline-block;
+    display: block;
+    /* Muda de inline-block para block */
+    width: fit-content;
+    /* Garante que o botão não estique a tela toda */
+    margin: 20px auto;
+    /* O 'auto' nas laterais faz a mágica de centralizar */
+
     background: #25d366;
     color: #fff;
     text-decoration: none;
@@ -362,6 +558,9 @@ h1 {
     border-radius: 50px;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    text-align: center;
+    /* Garante que o texto dentro dele esteja no meio */
+
 }
 
 .botao-whats:hover {
@@ -871,4 +1070,110 @@ h1 {
 
 .rodape strong {
     color: #fff;
+}
+
+/* ============================================================
+AJUSTE DE RESPONSIVIDADE (MOBILE FIRST)
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* 1. Ajusta o Título Grande para não quebrar a tela */
+    .titulo-1 {
+        font-size: 2rem !important;
+        padding: 0 10px;
+    }
+
+    /* 2. Ajusta a Foto de Perfil para caber em qualquer celular */
+    .foto-perfil {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    /* 3. CORREÇÃO CRÍTICA: Tira os 10rem de espaço lateral que esmagam o texto */
+    .sobre,
+    section {
+        padding: 2rem 1.5rem !important;
+        /* Espaço pequeno e elegante nas laterais */
+    }
+
+    /* 4. Ajusta o menu para não embolar */
+    .menu {
+        gap: 1rem !important;
+        flex-wrap: wrap;
+        /* Se não couber, ele joga o item para baixo */
+    }
+
+    /* 5. Garante que os cards ocupem 100% da largura no celular */
+    .grid-geral,
+    .grid-universal {
+        grid-template-columns: 1fr !important;
+        padding: 10px !important;
+    }
+
+    /* 6. Ajusta o tamanho dos títulos médios no mobile */
+    .t-m,
+    .titulo-2 {
+        font-size: 1.6rem !important;
+    }
+}
+
+/* Classe para esconder as seções que não estão ativas */
+.secao-conteudo {
+    display: none;
+    animation: fadeIn 0.5s ease;
+    /* Um efeito suave de aparecer */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Esconde as seções por padrão */
+.secao-conteudo {
+    display: none;
+}
+
+/* Classe que o JavaScript vai usar para mostrar a seção ativa */
+.sessao-ativa {
+    display: block !important;
+    animation: fadeIn 0.5s ease;
+    /* Efeito suave ao trocar */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Especialização para os cards da Página Inicial */
+.card-index {
+    min-height: 240px !important;
+    /* Altura maior para não ficar achatado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza o conteúdo no meio do card */
+    text-align: center;
+}
+
+/* Ajuste fino para os títulos dentro do card do index */
+.card-index .titulo-card {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
 }

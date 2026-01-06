@@ -12,44 +12,25 @@
 
     <nav class="navegacao">
         <ul class="menu">
-            <li>
-                <a href="#inicio" class="menu-link">Inicio</a>
-            </li>
-            <li>
-                <a href="#profissional" class="menu-link">Profissional</a>
-            </li>
-            <li>
-                <a href="#pessoal" class="menu-link">Pessoal</a>
-            </li>
-            <li>
-                <a href="cultural" class="menu-link">Cultural</a>
-            </li>
-            <li>
-                <a href="contato" class="menu-link">Contato</a>
-            </li>
-
+            <li><a href="index.html" class="menu-link">Inicio</a></li>
+            <li><a href="profissional.html" class="menu-link">Profissional</a></li>
+            <li><a href="pessoal.html" class="menu-link">Pessoal</a></li>
+            <li><a href="cultural.html" class="menu-link">Cultural</a></li>
         </ul>
-
     </nav>
 
     <br><br><br>
     <section class="frase-tecnologia">
-        <p>
-            “Aqueles que conseguem imaginar qualquer coisa, podem criar o impossível.”
-        </p>
-        <span>— Alan Turing</span>
+        <p>"Estamos evoluindo! O portfólio está passando por otimizações para a Versão 2.0. Alguns links podem estar
+            temporariamente indisponíveis."</p>
+        <span>— </span>
     </section><br>
 
-    <!-- ================= TRILHA PROFISSIONAL ================= -->
-
+    <!-- ================= TRILHA PROFISSIONAL (GATILHOS) ================= -->
     <section class="trilha-profissional">
-
-        <h2 class="secao-titulo">Trilha Profissional</h2>
-
+        <h2 class="titulo-1">Trilha Profissional</h2>
         <div class="colunas-tecnicas">
-
-            <!-- Python -->
-            <a href="#python" class="coluna">
+            <div class="coluna" onclick="mostrarSessao('python')" style="cursor: pointer;">
                 <img src="./img/Python.png" alt="Python">
                 <h3>Python</h3>
                 <div class="linha-progresso">
@@ -58,10 +39,9 @@
                     </div>
                     <span class="valor">40%</span>
                 </div>
-            </a>
+            </div>
 
-            <!-- Linux -->
-            <a href="#linux" class="coluna">
+            <div class="coluna" onclick="mostrarSessao('linux')" style="cursor: pointer;">
                 <img src="./img/linux.jfif" alt="Linux">
                 <h3>Linux</h3>
                 <div class="linha-progresso">
@@ -70,10 +50,9 @@
                     </div>
                     <span class="valor">10%</span>
                 </div>
-            </a>
+            </div>
 
-            <!-- DevOps -->
-            <a href="#devops" class="coluna">
+            <div class="coluna" onclick="mostrarSessao('devops')" style="cursor: pointer;">
                 <img src="./img/devops.jpg" alt="DevOps">
                 <h3>DevOps</h3>
                 <div class="linha-progresso">
@@ -82,22 +61,20 @@
                     </div>
                     <span class="valor">10%</span>
                 </div>
-            </a>
+            </div>
 
-            <!-- Full Stack -->
-            <a href="#fullstack" class="coluna">
+            <div class="coluna" onclick="mostrarSessao('fullstack')" style="cursor: pointer;">
                 <img src="./img/full-stack.webp" alt="Full Stack">
                 <h3>Full Stack</h3>
                 <div class="linha-progresso">
                     <div class="barra">
-                        <div class="progresso" style="width: 25%"></div>
+                        <div class="progresso" style="width: 10%"></div>
                     </div>
-                    <span class="valor">25%</span>
+                    <span class="valor">10%</span>
                 </div>
-            </a>
+            </div>
 
-            <!-- Servidores -->
-            <a href="#ingles" class="coluna">
+            <div class="coluna" onclick="mostrarSessao('ingles')" style="cursor: pointer;">
                 <img src="./img/ingles.png" alt="Ingles">
                 <h3>Inglês</h3>
                 <div class="linha-progresso">
@@ -106,211 +83,371 @@
                     </div>
                     <span class="valor">12%</span>
                 </div>
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- ======================================================== -->
-
-    <section class="python-evolucao">
-        <h2 class="secao-titulo">Evolução em Python</h2>
-
-        <div class="evolucao-grid">
-            <div class="evolucao-card">
-                <h3>Fundamentos</h3>
-                <p>
-                    Sintaxe básica, tipos de dados, estruturas condicionais,
-                    laços de repetição e boas práticas iniciais.
-                </p>
-            </div>
-
-            <div class="evolucao-card">
-                <h3>Lógica & Estruturas</h3>
-                <p>
-                    Funções, listas, dicionários, tratamento de erros,
-                    modularização e organização de código.
-                </p>
-            </div>
-
-            <div class="evolucao-card">
-                <h3>Aplicações</h3>
-                <p>
-                    Scripts práticos, automações, integração com arquivos,
-                    projetos aplicados ao contexto real.
-                </p>
-            </div>
-
-            <div class="evolucao-card">
-                <h3>Certificação</h3>
-                <p>
-                    Preparação focada em certificação Python,
-                    validando conhecimento técnico adquirido.
-                </p>
             </div>
         </div>
     </section>
 
-    <section class="python-projetos">
-        <h2 class="secao-titulo">Projetos em Python</h2>
+    <!-- ======================== PALCO PRINCIPAL (CONTEÚDO) ========================= -->
 
+    <!-- 1. PALCO PYTHON (PRESERVADO) -->
+    <div id="sessao-python" class="secao-conteudo sessao-ativa">
+        <h2 class="titulo-1">Evolução em Python</h2>
+        <div class="grid-geral" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));">
+            <div class="card-base" style="border-bottom: 5px solid #25d366;">
+                <h3 class="t-s">Nível 1: Lógica Base</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Declaração de variáveis e Tipagem</li>
+                    <li>Estruturas de decisão (If/Else)</li>
+                    <li>Laços de repetição (For/While)</li>
+                    <li>Operadores lógicos e aritméticos</li>
+                </ul>
+            </div>
+            <div class="card-base" style="border-bottom: 5px solid #ffb100;">
+                <h3 class="t-s">Nível 2: Estruturação</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Manipulação de Listas e Dicionários</li>
+                    <li>Criação de Funções e Escopos</li>
+                    <li>Tratamento de Exceções (Try/Except)</li>
+                    <li>Leitura de arquivos TXT e CSV</li>
+                </ul>
+            </div>
+            <div class="card-base">
+                <h3 class="t-s">Nível 3: Integração</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Scripts de automação de sistema</li>
+                    <li>Manipulação de dados em JSON</li>
+                    <li>Consumo de APIs e Bibliotecas</li>
+                    <li>Introdução a Objetos (POO)</li>
+                </ul>
+            </div>
+            <div class="card-base">
+                <h3 class="t-s">Nível 4: Especialista</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Simulados Certificação LPI Python</li>
+                    <li>Otimização de Algoritmos</li>
+                    <li>Gestão de Ambientes (Pip/Venv)</li>
+                    <li>Padrões de Projeto (Design Patterns)</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="python-projetos">
+            <h2 class="titulo-1">Projetos em Python</h2>
+            <div class="projetos-python-grid">
+                <div class="projeto-python-card">
+                    <img src="./img/em-construcao.jpg" alt="Em construção">
+                    <div class="conteudo-projeto">
+                        <h4>Automação de Arquivos</h4>
+                        <p>"logo irei Disponibilizar ... Obrigado."</p>
+                    </div>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+                <div class="projeto-python-card"><img src="./img/em-construcao.jpg">
+                    <h4>"Em Desenvolvimento"</h4>
+                    <p>"logo irei Disponibilizar..."</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 2. PALCO LINUX -->
+    <div id="sessao-linux" class="secao-conteudo">
+        <h2 class="titulo-1">Trilha Linux</h2>
+
+        <!-- Níveis 0 a 10 -->
+        <div class="grid-geral" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));">
+            <div class="card-base" style="border-bottom: 5px solid #25d366;">
+                <h3 class="t-s">Nível 1: CLI Base</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Filosofia Open Source e Licenciamento</li>
+                    <li>Navegação básica via CLI (ls, cd, pwd)</li>
+                    <li>Uso de Ajuda e Manuais (man, help)</li>
+                    <li>Comandos de Hardware (lscpu, free)</li>
+                </ul>
+                <span class="texto-2" style="color: #25d366; font-weight: bold;">● Concluído</span>
+            </div>
+
+            <div class="card-base" style="border-bottom: 5px solid #ffb100;">
+                <h3 class="t-s">Nível 2: Administração</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Hierarquia de Diretórios (FHS)</li>
+                    <li>Criação e Compressão (tar, gzip, zip)</li>
+                    <li>Busca e Filtragem (grep, find, sort)</li>
+                    <li>Editores de Fluxo e I/O (Pipes, Redirecionamento)</li>
+                </ul>
+                <span class="texto-2" style="color: #ffb100; font-weight: bold;">● Foco Atual</span>
+            </div>
+
+            <div class="card-base">
+                <h3 class="t-s">Nível 3: Admin e Segurança</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Gestão de Usuários e Grupos</li>
+                    <li>Permissões de Arquivos (Chmod e Chown)</li>
+                    <li>Monitoramento de Processos (top, kill)</li>
+                    <li>Fundamentos de Redes e DNS</li>
+                </ul>
+            </div>
+
+            <div class="card-base">
+                <h3 class="t-s">Nível 4: LPI Essentials Ready</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Automação Básica com Shell Script</li>
+                    <li>Instalação de Softwares (Gerenciadores)</li>
+                    <li>Simulados Reais LPI 010-160</li>
+                    <li>Conclusão da Base Profissional Linux</li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+        <!-- SEÇÃO DE PROJETOS UNIFICADA (LADO A LADO) -->
+        <h2 class="titulo-1" style="margin-top: 50px;">Projetos Linux</h2>
         <div class="projetos-python-grid">
 
+            <!-- Projeto 1 -->
             <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
+                <img src="./img/em-construcao.jpg">
                 <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
+                    <h4>Configuração Servidor</h4>
+                    <p>"Hardening e Segurança. Em breve..."</p>
                 </div>
             </div>
 
+            <!-- Projeto 2 -->
             <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
+                <img src="./img/em-construcao.jpg">
                 <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
+                    <h4>Automação Bash</h4>
+                    <p>"Scripts de Backup automático. Em breve..."</p>
                 </div>
             </div>
 
-
+            <!-- Projeto 3 -->
             <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
+                <img src="./img/em-construcao.jpg">
                 <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
+                    <h4>Monitoramento Zabbix</h4>
+                    <p>"Dashboard de saúde do servidor. Em breve..."</p>
                 </div>
             </div>
-
-
-
-
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-            <div class="projeto-python-card">
-                <img src="./img/em-construcao.jpg" alt="Projeto em construção">
-                <div class="conteudo-projeto">
-                    <h4>Automação de Arquivos</h4>
-                    <p>
-                        Script para leitura, organização e processamento
-                        automático de arquivos locais.
-                    </p>
-                </div>
-            </div>
-
-
-
-            <!-- Repita esse bloco até ter ~9 projetos -->
-
-            <!-- Repita esse bloco até ter ~9 projetos -->
-
-            <!-- Repita esse bloco até ter ~9 projetos -->
 
         </div>
-    </section>
+    </div>
+    <!-- 3. PALCO DEVOPS (Sincronizado) -->
+    <div id="sessao-devops" class="secao-conteudo">
+        <h2 class="titulo-1">Trilha DevOps: Logística de Software</h2>
 
+        <!-- Grade de Evolução 0 a 10 -->
+        <div class="grid-geral" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));">
+            <div class="card-base" style="border-bottom: 5px solid #25d366;">
+                <h3 class="t-s">Nível 1: Gestão de Código</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Git: Controle de Versão e Branches</li>
+                    <li>GitHub: Colaboração e Code Review</li>
+                    <li>Documentação técnica (Markdown)</li>
+                    <li>Padrões de Commit e Integridade</li>
+                </ul>
+                <span class="texto-status" style="color: #25d366;">● Concluído</span>
+            </div>
+            <div class="card-base">
+                <h3 class="t-s">Nível 2: Containers</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Fundamentos de Docker</li>
+                    <li>Criação de Imagens e Dockerfiles</li>
+                    <li>Orquestração com Docker Compose</li>
+                    <li>Isolamento de Ambientes de Execução</li>
+                </ul>
+            </div>
+            <div class="card-base">
+                <h3 class="t-s">Nível 2: Containers</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Integração Contínua (GitHub Actions)</li>
+                    <li>Entrega Contínua e Deploy Automático</li>
+                    <li>Testes Automatizados na Esteira</li>
+                    <li>Gestão de Segredos e Variáveis</li>
+                </ul>
+            </div>
+            <div class="card-base">
+                <h3 class="t-s">Nível 2: Containers</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Provedores de Nuvem (AWS / OCI)</li>
+                    <li>Infraestrutura como Código (Terraform)</li>
+                    <li>Monitoramento e Logs (Grafana)</li>
+                    <li>SRE: Engenharia de Confiabilidade</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- SEÇÃO DE PROJETOS UNIFICADA (3 COLUNAS) -->
+        <h2 class="titulo-1" style="margin-top: 50px;">Projetos DevOps</h2>
+        <div class="projetos-python-grid">
+
+            <!-- Projeto 1 -->
+            <div class="projeto-python-card">
+                <img src="./img/em-construcao.jpg">
+                <div class="conteudo-projeto">
+                    <h4>Pipeline de Deploy</h4>
+                    <p>"Automação de testes e entrega. Em breve..."</p>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="projeto-python-card">
+                <img src="./img/em-construcao.jpg">
+                <div class="conteudo-projeto">
+                    <h4>Ambiente Dockerizado</h4>
+                    <p>"Orquestração de Banco e API. Em breve..."</p>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="projeto-python-card">
+                <img src="./img/em-construcao.jpg">
+                <div class="conteudo-projeto">
+                    <h4>Infra as Code (Terraform)</h4>
+                    <p>"Provisionamento automático. Em breve..."</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 4. PALCO FULL STACK (Sincronizado) -->
+    <div id="sessao-fullstack" class="secao-conteudo">
+        <h2 class="titulo-1">Trilha Full Stack: Arquitetura e Engenharia</h2>
+
+        <!-- Grade de Evolução 0 a 10 -->
+        <div class="grid-geral" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));">
+
+            <!-- Nível 1: Frontend -->
+            <div class="card-base" style="border-bottom: 5px solid #25d366;">
+                <h3 class="t-s">Nível 1: Interface</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>HTML5 Semântico e SEO</li>
+                    <li>CSS3 Moderno (Grid/Flexbox)</li>
+                    <li>Responsividade (Mobile First)</li>
+                    <li>Hierarquia Visual (UI/UX)</li>
+                </ul>
+            </div>
+
+            <!-- Nível 2: Backend -->
+            <div class="card-base" style="border-bottom: 5px solid #ffb100;">
+                <h3 class="t-s">Nível 2: Lógica de Servidor</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Integração Python e Flask</li>
+                    <li>Criação de APIs RESTful</li>
+                    <li>Persistência de Dados (SQL)</li>
+                    <li>Tratamento de Requisições</li>
+                </ul>
+            </div>
+
+            <!-- Nível 3: Integração -->
+            <div class="card-base">
+                <h3 class="t-s">Nível 3: Arquitetura</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Autenticação e Segurança (JWT)</li>
+                    <li>Modelagem NoSQL e Cache</li>
+                    <li>Testes Automatizados (Unit)</li>
+                    <li>Deploy e Cloud Foundations</li>
+                </ul>
+            </div>
+
+            <!-- Nível 4: Engenharia -->
+            <div class="card-base">
+                <h3 class="t-s">Nível 4: Ecossistema</h3>
+                <ul class="p-txt" style="margin-left: 15px; font-size: 0.85rem;">
+                    <li>Design Patterns (SOLID)</li>
+                    <li>Arquitetura de Microsserviços</li>
+                    <li>Otimização de Performance</li>
+                    <li>Engenharia de Confiabilidade</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO DE PROJETOS UNIFICADA (3 COLUNAS) -->
+        <h2 class="titulo-1" style="margin-top: 50px;">Projetos Full Stack</h2>
+        <div class="projetos-python-grid">
+
+            <!-- Projeto 1 -->
+            <div class="projeto-python-card">
+                <img src="./img/em-construcao.jpg">
+                <div class="conteudo-projeto">
+                    <h4>Dashboard de Logística</h4>
+                    <p>"Visualização de dados operacionais em tempo real. Em breve..."</p>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="projeto-python-card">
+                <img src="./img/em-construcao.jpg">
+                <div class="conteudo-projeto">
+                    <h4>Gestão de Inventário</h4>
+                    <p>"Sistema Full Stack com controle de estoque e auditoria de entrada/saída."</p>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="projeto-python-card">
+                <img src="./img/em-construcao.jpg">
+                <div class="conteudo-projeto">
+                    <h4>Portal de Serviços Automotivos</h4>
+                    <p>"Integração completa: Cliente, Prestador e Banco de Dados."</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 5. PALCO INGLÊS -->
+    <div id="sessao-ingles" class="secao-conteudo">
+        <h2 class="titulo-1">Trilha de Inglês Técnico</h2>
+        <div class="card-base" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h3 class="t-s">Language Proficiency</h3>
+            <p class="p-txt">"Material em desenvolvimento para o upgrade de Janeiro."</p>
+        </div>
+    </div>
 
     <footer class="rodape">
-        <p>
-            © Alisson Domingos — Estudante de Tecnologia da Informação<br>
-            Projeto iniciado em <strong>dezembro de 2025</strong>
-        </p>
+        <p>© Alisson Domingos — Estudante de Tecnologia da Informação<br>
+            Projeto iniciado em <strong>dezembro de 2025</strong></p>
     </footer>
 
-
+    <script>
+        function mostrarSessao(idTema) {
+            const secoes = document.querySelectorAll('.secao-conteudo');
+            secoes.forEach(s => s.classList.remove('sessao-ativa'));
+            const alvo = document.getElementById('sessao-' + idTema);
+            if (alvo) {
+                alvo.classList.add('sessao-ativa');
+                alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
 </body>
 
 </html>
