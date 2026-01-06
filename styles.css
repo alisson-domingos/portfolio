@@ -1177,3 +1177,66 @@ AJUSTE DE RESPONSIVIDADE (MOBILE FIRST)
     margin-bottom: 15px;
     font-size: 1.4rem;
 }
+
+/* ============================================================
+   REFRESCAGEM MOBILE (RESOLVENDO O DESIGN NO CELULAR)
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* 1. Remove os espaços laterais que 'esmagam' o texto */
+    .sobre,
+    section,
+    main {
+        padding: 2rem 1.2rem !important;
+    }
+
+    /* 2. Garante que os Títulos não fiquem gigantes */
+    .titulo-1 {
+        font-size: 1.8rem !important;
+    }
+
+    .titulo-2 {
+        font-size: 1.5rem !important;
+        margin: 30px 0 15px !important;
+    }
+
+    .t-m {
+        font-size: 1.6rem !important;
+    }
+
+    /* 3. A MÁGICA: Transforma todas as grades em UMA COLUNA */
+    .grid-geral,
+    .grid-universal,
+    .projetos-python-grid,
+    .colunas-tecnicas {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 10px !important;
+    }
+
+    /* 4. Ajusta a Foto de Perfil */
+    .foto-perfil {
+        width: 220px !important;
+        height: 220px !important;
+    }
+
+    /* 5. Ajusta o Menu para não embolar */
+    .menu {
+        gap: 1rem !important;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+    }
+
+    /* 6. Ajusta a área de visualização (Carrossel) */
+    .imagem-principal {
+        height: 300px !important;
+        /* Menor para caber na tela do celular */
+    }
+
+    /* 7. Ajusta a altura mínima dos cards para não ocupar a tela toda */
+    .card-base {
+        min-height: auto !important;
+        padding: 20px !important;
+    }
+}
